@@ -12,7 +12,6 @@
             --text-primary: #1a1a1a;
             --text-secondary: #555555;
             --text-tertiary: #777777;
-            --accent-line: #000000;
             --link-color: #2c2c2c;
         }
 
@@ -29,14 +28,13 @@
             color: var(--text-primary);
             background-color: var(--bg-color);
             padding: 40px 20px;
-            -webkit-font-smoothing: antialiased; /* Makes text sharper on Mac */
+            -webkit-font-smoothing: antialiased;
         }
         
         .container {
-            max-width: 900px; /* Slightly narrower for better readability line-length */
+            max-width: 900px;
             margin: 0 auto;
             background: var(--paper-color);
-            /* Replaced harsh border with elegant shadow */
             box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
             border-radius: 2px;
         }
@@ -86,7 +84,6 @@
             margin-bottom: 45px;
         }
 
-        /* Last section shouldn't have margin */
         .section:last-child {
             margin-bottom: 0;
         }
@@ -98,7 +95,7 @@
             padding-bottom: 10px;
             border-bottom: 2px solid #000;
             margin-bottom: 25px;
-            letter-spacing: 1.5px; /* Adds "premium" feel to headers */
+            letter-spacing: 1.5px;
             text-transform: uppercase;
         }
         
@@ -111,7 +108,6 @@
         /* --- ITEMS (Experience/Education) --- */
         .education-item, .experience-item {
             margin-bottom: 30px;
-            /* Prevent page break inside an item when printing */
             page-break-inside: avoid; 
         }
         
@@ -150,7 +146,7 @@
         }
         
         .date {
-            font-family: monospace; /* Makes numbers align nicely */
+            font-family: monospace;
             font-size: 0.95rem;
             color: var(--text-tertiary);
             background: #f4f4f4;
@@ -180,7 +176,7 @@
         }
         
         .achievements li:before {
-            content: '›'; /* More elegant than a square or dot */
+            content: '›';
             position: absolute;
             left: 0;
             color: #000;
@@ -216,16 +212,15 @@
         /* --- SKILLS GRID --- */
         .skills-container {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* Precise 2-column */
+            grid-template-columns: 1fr 1fr;
             gap: 40px;
         }
         
         .skill-category h3 {
-            font-size: 1.1rem;
+            font-size: 0.9rem;
             font-weight: 700;
             margin-bottom: 15px;
             text-transform: uppercase;
-            font-size: 0.9rem;
             letter-spacing: 1px;
             color: var(--text-tertiary);
         }
@@ -240,11 +235,17 @@
         .skill {
             background: #f0f0f0;
             padding: 6px 14px;
-            border-radius: 20px; /* Pill shape */
+            border-radius: 20px;
             font-size: 0.9rem;
             font-weight: 500;
             color: #333;
-            border: 1px solid transparent;
+        }
+        
+        /* Highlight specific AI tool skills slightly to catch the eye */
+        .skill.ai-tool {
+            background: #e8eff5; /* Very subtle blue tint */
+            color: #000;
+            font-weight: 600;
         }
 
         /* --- RESPONSIVE --- */
@@ -255,29 +256,15 @@
             .name { font-size: 2.2rem; }
             .skills-container { grid-template-columns: 1fr; gap: 30px; }
             .contact-info { flex-direction: column; align-items: center; gap: 10px; }
-            .date { margin-top: 5px; }
             header { padding: 40px 20px; }
         }
 
-        /* --- PRINT OPTIMIZATION --- */
         @media print {
-            body { 
-                background: white; 
-                color: black; 
-                font-size: 12pt; /* Standard print size */
-            }
-            .container { 
-                box-shadow: none; 
-                border: none; 
-                max-width: 100%; 
-                margin: 0;
-                padding: 0;
-            }
+            body { background: white; color: black; font-size: 12pt; }
+            .container { box-shadow: none; border: none; max-width: 100%; margin: 0; padding: 0; }
             header { padding-top: 0; }
             a { text-decoration: none; color: black; }
-            /* Shows the URL next to the link for printed paper, optional
-            a[href]:after { content: " (" attr(href) ")"; font-size: 0.8em; } */
-            .date { border: 1px solid #ccc; } /* Add border to date for contrast on paper */
+            .date { border: 1px solid #ccc; }
         }
     </style>
 </head>
@@ -372,22 +359,24 @@
                 <h2 class="section-title">Skillset</h2>
                 <div class="skills-container">
                     <div class="skill-category">
-                        <h3>Technical</h3>
+                        <h3>Tech Stack & AI Workflow</h3>
                         <div class="skills">
                             <span class="skill">React.js</span>
                             <span class="skill">Node.js</span>
                             <span class="skill">PostgreSQL/PostGIS</span>
                             <span class="skill">Redis</span>
-                            <span class="skill">Deep Learning</span>
-                            <span class="skill">Computer Vision</span>
-                            <span class="skill">Leaflet.js</span>
                             <span class="skill">RESTful APIs</span>
+                            <span class="skill ai-tool">Cursor (AI-Native IDE)</span>
+                            <span class="skill ai-tool">AI-Assisted Coding</span>
+                            <span class="skill">Prompt Engineering</span>
+                            <span class="skill">PyTorch / Deep Learning</span>
+                            <span class="skill">Computer Vision</span>
                             <span class="skill">Nginx</span>
                             <span class="skill">PM2</span>
                         </div>
                     </div>
                     <div class="skill-category">
-                        <h3>Professional</h3>
+                        <h3>Professional & Strategy</h3>
                         <div class="skills">
                             <span class="skill">AI Project Management</span>
                             <span class="skill">Cross-functional Leadership</span>
